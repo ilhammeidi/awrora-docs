@@ -73,35 +73,35 @@
           <div class="container-fluid">
             <!-- BRANDING -->
             <section class="row" id="brand">
-                <br /><br />
+                <br><br>
                 <div class="col-lg-10">
                     <h1>Brand/Project Name</h1>
-                    <hr />
+                    <hr>
                     <ul>
-                      <li>Open <code>/static/text/brand.js</code></li>
+                      <li>Open <code>/assets/text/brand.js</code></li>
                       <li>
                         Here's bellow the available brand attribute
-                        <pre><code class="language-js">
-const brand = {
-  agency: {
-    name: 'Agency',
-    desc: 'Aworara Agency - Vue Single Landing Page Template',
-    prefix: 'awrora',
-    footerText: 'Awrora Theme - All Rights Reserved 2020',
-    logoText: 'Awrora Agency',
-    projectName: 'Agency Theme',
-    url: 'awrora.indisains.com/agency',
-    img: '/static/images/agency-logo.png',
-    notifMsg:
-      'Donec sit amet nulla sed arcu pulvinar ultricies commodo id ligula.'
-  }
-}
+                        <pre class=" language-js"><code class=" language-js">
+<span class="token keyword">const</span> brand <span class="token operator">=</span> <span class="token punctuation">{</span>
+  agency<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Agency'</span><span class="token punctuation">,</span>
+    desc<span class="token punctuation">:</span> <span class="token string">'Veluxi Agency - Vue Single Landing Page Template'</span><span class="token punctuation">,</span>
+    prefix<span class="token punctuation">:</span> <span class="token string">'veluxi'</span><span class="token punctuation">,</span>
+    footerText<span class="token punctuation">:</span> <span class="token string">'Veluxi Theme - All Rights Reserved 2023'</span><span class="token punctuation">,</span>
+    logoText<span class="token punctuation">:</span> <span class="token string">'Veluxi Agency'</span><span class="token punctuation">,</span>
+    projectName<span class="token punctuation">:</span> <span class="token string">'Agency Theme'</span><span class="token punctuation">,</span>
+    url<span class="token punctuation">:</span> <span class="token string">'veluxi.ux-maestro.com/agency'</span><span class="token punctuation">,</span>
+    img<span class="token punctuation">:</span> <span class="token string">'/static/images/agency-logo.png'</span><span class="token punctuation">,</span>
+    notifMsg<span class="token punctuation">:</span>
+      <span class="token string">'Donec sit amet nulla sed arcu pulvinar ultricies commodo id ligula.'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-export default brand
+<span class="token keyword">export</span> <span class="token keyword">default</span> brand
 </code></pre>
                       </li>
                       <li>
-                        Those attribute will affect in HTML &lsaquo;head&rsaquo; content and other branding name
+                        Those attribute will affect in HTML ‹head› content and other branding name
                       </li>
                     </ul>
                 </div>
@@ -148,7 +148,7 @@ export default brand
                 <h1>Component Variants</h1>
                 <p>
                   This template come with some variant main components that easy to use.
-                  To change Header, Footer, and Corner component, please open in global store <code>store/ui.js</code>, and just change value then all components will be updated.
+                  To change Header, Footer, and Corner component, please open in global store <code>composables/uiTheme.js</code>, and just change value then all components will be updated.
                   Here's the available values:
                 </p>
                 <table class="tg" width="100%">
@@ -212,13 +212,14 @@ export default brand
                   <li>Mixed: <code>mixed</code> <em>(Scroll Navigation + Mega Menu)</em></li>
                 </ul>
                 <p>
-                  In <code>store/ui.js</code> you can edit <code>header</code> value to change the header type. 
+                  In <code>composables/uiTheme.js</code> you can edit <code>header</code> value to change the header type. 
                   The changes will affected to all pages containing header except Blog and Auth (login &amp; register).
                 </p>
-                <pre><code class="language-js">// store/ui.js
-export const state = () => ({
-  header: 'mixed', /* available: mixed, basic, droplist, mega, hamburger, navscroll, search */
-})
+                <pre><code class="language-js">// composables/uiTheme.js
+export const useHeader = () => useState(
+  'header',
+  () => 'mixed', /* available: mixed, basic, droplist, mega, hamburger, navscroll, search */
+);
   </code></pre>
               <br />
               <p>
@@ -265,13 +266,14 @@ export const state = () => ({
                   <li>Contact: <code>contact</code></li>
                 </ul>
                 <p>
-                  In <code>store/ui.js</code> you can edit <code>footer</code> value to change the footer type. 
+                  In <code>composables/uiTheme.js</code> you can edit <code>footer</code> value to change the footer type. 
                   The changes will affected to all pages except Maintenance and Coming Soon which doesn't uses footer.
                 </p>
-                <pre><code class="language-js">// store/ui.js
-export const state = () => ({
-  header: 'mixed', /* available: mixed, basic, droplist, mega, hamburger, navscroll, search */
-})
+                <pre><code class="language-js">// composables/uiTheme.js
+export const useFooter = () => useState(
+  'footer',
+  () => 'sitemap', /* basic, blog, contact, sitemap */
+);
   </code></pre>
                  <br />
                 <hr />
@@ -279,7 +281,7 @@ export const state = () => ({
                 <p>
                   The additional components for homepage placed on the bottom right corner.
                   There are 2 variant, Chat Panel and Single Page Navigation. 
-                  The Corner component itself imported from <code>'~/components/Home/Corner'</code>
+                  The Corner component itself imported from <code>'@/components/Home/Corner'</code>
                 </p>
                 <pre><code class="language-js">
 &lt;template&gt;
@@ -289,7 +291,7 @@ export const state = () => ({
 &lt;/template&gt; 
 
 &lt;script&gt; 
-import Corner from '~/components/Home/Corner'
+import Corner from '@/components/Home/Corner'
 
 export default {
   components: {
@@ -303,14 +305,15 @@ export default {
                   <li>Single Page Navigation: <code>nav</code></li>
                 </ul>
                 <p>
-                  To use it, in <code>store/ui.js</code> you can edit <code>corner</code> value to change the corner type. 
+                  To use it, in <code>composables/uiTheme.js</code> you can edit <code>corner</code> value to change the corner type. 
                   The changes only affected in homepage.
                   By default it's only implemented in homepage, but you can use <code>Corner</code> component for another page
                 </p>
-                <pre><code class="language-js">// store/ui.js
-export const state = () => ({
-  corner: 'chat' /* chat, nav */
-})
+                <pre><code class="language-js">// composables/uiTheme.js
+export const useCorner = () => useState(
+  'corner',
+  () => 'chat', /* chat, nav */
+);
   </code></pre>
                 <br />
                 <hr />
@@ -414,62 +417,8 @@ export const state = () => ({
                               </td>
                               <td valign="top"><code>theme = { ...palette.oceanBlue }</code></td>
                             </tr>
-                            <tr>
-                              <td class="tg-yw4l"><code>theme.dark:</code></td>
-                              <td valign="top">Boolean</td>
-                              <td>
-                                <code>true</code>,
-                                <code>false</code>
-                              </td>
-                              <td valign="top"><code>dark: true</code></td>
-                            </tr>
-                            <tr>
-                              <td class="tg-yw4l"><code>rtl:</code></td>
-                              <td valign="top">Boolean</td>
-                              <td>
-                                <code>true</code>,
-                                <code>false</code>
-                              </td>
-                              <td valign="top"><code>rtl: true</code></td>
-                            </tr>
                           </tbody>
                         </table>
-                        <br />
-                        <strong>Here's the complete code, for greenLeaf color in dark mode with RTL direction</strong>
-                         <pre><code class="language-js">// file: config/vuetify.options.js
-const palette = {                        
-  greenLeaf: {
-    primary: colors.green.base, // primary main
-    primarylight: colors.green.lighten4, // primary light
-    primarydark: colors.green.darken4, // primary dark
-    secondary: colors.blueGrey.base, // secondary main
-    secondarylight: colors.blueGrey.lighten4, // secondary light
-    secondarydark: colors.blueGrey.darken3, // secondary dark
-    anchor: colors.green.base // link
-  }
-}
-export const theme = {
-  ...palette.greenLeaf
-}
-
-export default {
-  rtl: true,
-  theme: {
-    dark: true,
-    themes: {
-      light: {
-        ...theme
-      },
-      dark: {
-        ...theme
-      }
-    },
-    options: {
-      customProperties: true
-    }
-  }
-}
-    </code></pre>
                       </li>
                       <li>
                         <strong>!IMPORTANT</strong><br />
@@ -483,37 +432,23 @@ export default {
                   <h4>Layout Direction</h4>
                   <p>This template also support for <strong>RTL</strong> direction. To set RTL as default direction please follow this step.</p>
                   <ul>
-                    <li>Open <code>/config/vuetify.options.js</code></li>
-                    <li>
-                      To set layout as RTL direction please change <code>rtl: true</code>, and change to <code>rtl: false</code> for LTR layout
-                      <pre><code class="language-js">// file: config/vuetify.options.js
-export default {
-  rtl: true,
-  // rest code
-}
-    </code></pre>
-                    </li>
-                    <li>
-                      And in <code>nuxt.config.js</code> change <code>htmlAttrs.dir</code> to <code>'rtl'</code>
-                      <pre><code class="language-js">// nuxt.config.js
-module.exports = {
-  /*
-  ** Headers of the page
-  */
-  head: {
-    htmlAttrs: {
-      dir: 'rtl'
+                    <li>Open <code>/composables/uiTheme.js</code></li>
+                    <li>Set <strong>useRtl</strong> to true <code>export const useRtl = () =&gt; (useState('rtl', () =&gt; true));</code></li>
+                    <li>Finally Open <code>/nuxt.config.ts</code> Then please add <code>dir: 'rtl'</code> in 
+                      <pre>
+<code class="language-js"> // nuxt.config.ts
+export default defineNuxtConfig({
+  app: {
+    head: {
+      // the rest code
+      htmlAttrs: {
+        dir: 'rtl'
+      },
     }
+    // the rest code
   }
-}
-    </code></pre>
-                    </li>
-                    <li>
-                      Finally, it's an optional, in <code>app.html</code> change the <code>lang</code> attribute following your default site language. In example
-                      &lt;html {{ HTML_ATTRS }} lang="en"&gt;
-                      <pre><code class="language-js">// app.html
-&lt;html {{ HTML_ATTRS }} lang="en"&gt;
-    </code></pre>
+})
+</code></pre>
                     </li>
                   </ul>
                   <br /><br />
@@ -576,7 +511,7 @@ module.exports = {
                   To use this feature we recommend to use https in production. If not there will be some warnings in browser console related cookies and security.
                 </p>
                 <p>
-                  You can disable this feature by open <code>/youtube.js</code> then set set <code>use: false</code>.
+                  You can disable this feature by open <code>config/youtube.js </code> then set set <code>use: false</code>.
                 </p>
               </div>
             </section>
@@ -587,21 +522,24 @@ module.exports = {
             
             <!-- NAVIGATION -->
             <section class="row" id="lang">
-                <br /><br />
+                <br><br>
                 <div class="col-lg-10">
                     <h1>Set Language</h1>
-                    <hr />
-                    <img src="../images/lang.jpg" alt="lang" />
-                    <br /><br />
+                    <hr>
+                    <img src="../images/lang.jpg" alt="lang">
+                    <br><br>
                     <ul>
                       <li>
                         <h5>
                           To set default language
                         </h5>
                         <ol>
-                          <li>Open <code>/nuxt.config.js</code></li>
+                          <li>Open <code>/nuxt.config.ts</code></li>
                           <li>change <code>defaultLocale: 'en'</code> to other initial locale i.e. <code>id</code> for Bahasa Indonesia</li>
                           <li>And also for <code>vueI18n: { fallbackLocale: 'en' }</code> to other fallback locale i.e. <code>id</code> for Bahasa Indonesia</li>
+                          <li><em>For arabic with RTL layout, please add <code>dir: 'rtl'</code> in <code> app.head.htmlAttrs: { lang: 'ar', dir: 'rtl' }</code></em></li>
+                          <li>Then open <code>composables/uiTheme.js</code></li>
+                          <li>Set <strong>useRtl</strong> to true <code>export const useRtl = () =&gt; (useState('rtl', () =&gt; true));</code></li>
                         </ol>
                       </li>
                       <li>
@@ -611,32 +549,30 @@ module.exports = {
                         <ol>
                           <li>
                             By default, nuxt-i18n expects your translations to be organised as such by create new language JS library in <code>/static/lang/[localCode]/</code>
-                            <pre>
-└── static
-    └── lang
-        ├── en-US.js
-        └── de-DE.js</pre>
+                            <pre>    └── lang
+        ├── en-US.json
+        └── de-DE.json</pre>
                           </li>
                           <li>You can check the available local code here <a href="https://github.com/ladjs/i18n-locales" target="_blank">https://github.com/ladjs/i18n-locales</a></li>
                           <li>
-                            Then register it in <code>/static/lang/languages.js</code>
-                            <pre><code class="language-js">
-export default [
-  {
-    code: 'de',
-    iso: 'de-DE',
-    name: 'Deutch',
-    file: 'de-DE.js',
-    dir: 'ltr'
-  },
-  {
-    code: 'en',
-    iso: 'en-US',
-    name: 'English',
-    file: 'en-US.js',
-    dir: 'ltr'
-  }
-]
+                            Then register it in <code>/lang/languages.js</code>
+                            <pre class=" language-js"><code class=" language-js">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    code<span class="token punctuation">:</span> <span class="token string">'de'</span><span class="token punctuation">,</span>
+    iso<span class="token punctuation">:</span> <span class="token string">'de-DE'</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'Deutch'</span><span class="token punctuation">,</span>
+    file<span class="token punctuation">:</span> <span class="token string">'de-DE.json'</span><span class="token punctuation">,</span>
+    dir<span class="token punctuation">:</span> <span class="token string">'ltr'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    code<span class="token punctuation">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>
+    iso<span class="token punctuation">:</span> <span class="token string">'eng-US'</span><span class="token punctuation">,</span>
+    name<span class="token punctuation">:</span> <span class="token string">'English'</span><span class="token punctuation">,</span>
+    file<span class="token punctuation">:</span> <span class="token string">'en-US.json'</span><span class="token punctuation">,</span>
+    dir<span class="token punctuation">:</span> <span class="token string">'ltr'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
     </code></pre>
                           </li>
                         </ol>
@@ -649,17 +585,16 @@ export default [
                               <li>Pick one of sample <strong>Components</strong> with cointaining text, i.e <code>/componens/Footer.vue</code></li>
                               <li>Basically the message return is <strong>String</strong>. And next step is replace/add every string in components</li>
                               <li>
-                                Add a translated text inside components <br />
-                                <pre>
-                                  <code class="language-js">
-&lt;p&gt;
-  {{ $t('agencyLanding.footer_paragraph') }}
-&lt;/p&gt;
+                                Add a translated text inside components <br>
+                                <pre class=" language-js">                                  <code class=" language-js">
+<span class="token operator">&lt;</span>p<span class="token operator">&gt;</span>
+  <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">$t</span><span class="token punctuation">(</span><span class="token string">'agencyLanding.footer_paragraph'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
                                   </code>
                                 </pre>
                               </li>
                               <li>
-                                Then open your translated page.
+                                Then run the server <code>npm run dev</code>.
                               </li>
                             </ol>
                           </li>

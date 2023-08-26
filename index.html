@@ -115,14 +115,14 @@
                         <h1 class="title">Thank you for Purchasing </h1>
                         <br /><br />
                         <h3>Awrora - Vue JS Landing Page Collection</h3>
-                        <h4>Version 1.1.5</h4>
+                        <h4>Version 2.0.0</h4>
                         <hr />
                         <ul>
                             <li>
                                 Created : 17 March 2021
                             </li>
                             <li>
-                                Latest Update : 22 Nov 2022
+                                Latest Update : 27 Aug 2023
                             </li>
                         </ul>
                     </div>
@@ -139,7 +139,7 @@
                         <article>
                             <p>
                                 Say Hello to <strong>Awrora - Vue and HTML Landing Page Collection</strong>. Designed to be clean, simple and elegant.
-                                Built with Vue, Nuxt Js, Vuetify, and HTML files included. 
+                                Built with Vue 3, Nuxt Js, Vuetify, and HTML files included. 
                                 Your site will be completely responsive, ensuring they’ll look stunning and function flawlessly on desktops, tablets, and mobile devices.
                             </p>
                             <p>
@@ -165,7 +165,7 @@
                         <hr />
                         <ul class="styled">
                             <li>
-                                <strong>11 landing page templates</strong>. Built with one of most popular javascript library Vue.JS, Vuetify (Material Design) and Nuxt.JS with SSR
+                                <strong>11 landing page templates</strong>. Built with one of most popular javascript library Vue 3, Vuetify (Material Design) and Nuxt.JS.
                             </li>
                             <li>
                               <strong>Including HTML version</strong>. Built with jQuery, Bootstrap, MaterializeCSS (Material Design) and Pug.js for HTML template engine. 
@@ -201,9 +201,6 @@
                                 <strong>Starter Project</strong>. Build app from scratch without without being distracted from innate feature.
                             </li>
                             <li>
-                                <strong>Support mono repo </strong>. Modern architecture to managing modules in multiple project.
-                            </li>
-                            <li>
                                 <strong>Clean code</strong> maintained by eslint.
                             </li>
                             <li>
@@ -224,25 +221,27 @@
                         <h1>Folder Structure</h1>
                         <hr />
                       <div class="directory-tree">
-                        <pre>
-└── packages
+                        <pre>└── packages
     ├── [theme-name]
+    |   ├── .eslintrc.js
+    |   ├── .gitignore
+    |   ├── .npmrc
     |   ├── assets
-    │   ├── components
-    │   ├── config
-    │   ├── layouts
-    │   ├── middleware
-    │   ├── pages
-    │   ├── plugin
-    │   ├── server
-    │   ├── static
-    │   ├── store
-    │   ├── app.html
-    │   ├── nuxt.config.js
-    │   ├── package.json
-    │   ├── package-lock.json
-    │   ├── README.md
-    │   ├── youtube.js
+    │&nbsp;&nbsp; ├── components
+    │&nbsp;&nbsp; ├── composable
+    │&nbsp;&nbsp; ├── config
+    │&nbsp;&nbsp; ├── error.vue
+    │&nbsp;&nbsp; ├── lang
+    │&nbsp;&nbsp; ├── layouts
+    │&nbsp;&nbsp; ├── nuxt.config.ts
+    │&nbsp;&nbsp; ├── package.json
+    │&nbsp;&nbsp; ├── package-lock.json
+    │&nbsp;&nbsp; ├── pages
+    │&nbsp;&nbsp; ├── plugin
+    │&nbsp;&nbsp; ├── preview.jpg
+    │&nbsp;&nbsp; ├── public
+    │&nbsp;&nbsp; ├── README.md
+    │&nbsp;&nbsp; ├── tsconfig.json
                         </pre>
                       </div>
                     </div>
@@ -286,7 +285,6 @@
                                 <img src="images/cmd1.png" width="600" alt="process" />
                                 <br />
 							</li>
-                            <li>For installation by use lerna, please check this link <a href="#lerna">Installation using lerna</a></li>
 							<li>
                                 <strong>Run App</strong><br />
 								After build installation complete, then run the app.
@@ -376,26 +374,6 @@
                               </table>
                             </li>
 						</ul>
-                        <div id="lerna">
-                          <h3>Installation With Lerna</h3>
-                          Lerna is A tool for managing JavaScript projects with multiple packages.
-                          This template has 10 packages(projects) inside <code>packages/</code> folder.
-                          So to install them at once you can use lerna. See full docs of lerna here <a href="https://github.com/lerna/lerna">https://github.com/lerna/lerna</a>.
-                          Here's the installation guide:<br /><br />
-                          <ul>
-                            <li>
-                              Let's start by installing Lerna globally with npm:
-                              <pre><code class="language-js">npm install --global lerna</code></pre>
-                            </li>
-                            <li>Go to your root project (where you've unzipped the product)</li>
-                            <li>
-                              Then install all packages
-                              <pre><code class="language-js">lerna bootstrap</code></pre>
-                              Note: This process will take some minutes, because there's lot of modules to be installed.
-                              If got stuck for this step. Please install the packages(projects) one by one by use <code>npm install</code> instead.
-                            </li>
-                          </ul>
-                        </div>
                     </div>
                 </section>
                 <!-- END -->
@@ -405,69 +383,50 @@
                 <section class="row" id="build">
                   <div class="col-lg-10">
                         <h1>Build App</h1>
-                        <hr />
+                        <hr>
                         <h4>Build project</h4>
 						<ul>
                             <li>Here'a bellow an example for <strong>agency-theme</strong>. You can use the same steps to other packages(projects)</li>
 							<li>
                                 First you need to build the production assets first
-								<pre><code class="language-js">npm run build</code></pre>
+								<pre class=" language-js"><code class=" language-js">npm run build</code></pre>
 								It usually take longer time than development to generate and compress production code.
 								The generated files will be placed in <code>.nuxt/</code>
-                                <img src="images/cmd2.png" width="800" alt="process" />
+                                <img src="images/cmd2.png" width="800" alt="process">
 							</li>
                             <li>
                                 Then start the app
-								<pre><code class="language-js">npm start</code></pre>
+								<pre class=" language-js"><code class=" language-js">npm run preview</code></pre>
 							</li>
 							<li>Then navigate to <a href="http://localhost:8001" target="_blank">http://localhost:8001</a></li>
                             <li>
-                              Node: In Windows system you need to install <strong>win-node-env</strong>, because setting NODE_ENV=production before command babel doesn't work on Windows.
+                              Note: In Windows system you need to install <strong>win-node-env</strong>, because setting NODE_ENV=production before command babel doesn't work on Windows.
                               Here's the packages <a href="https://www.npmjs.com/package/win-node-env" target="_blank">https://www.npmjs.com/package/win-node-env</a>
                             </li>
 						</ul>
-                        <br />
-                        <hr />
-                        <br />
-                        <br />
+                        <br>
+                        <hr>
+                        <br>
+                        <br>
                         <h4>Build Static HTML</h4>
-                        <ol>
-                          <li>
-                            Open <code>nuxt.config.js</code>, and add <code>target: 'static'</code>
-                            <pre>
- <code class="language-js">module.exports = {
-  target: 'static',
-  // Rest code
- }</code></pre>
-                          </li>
-                          <li>
-                            <p>Run the following commands:</p>
-                            <pre>
-  <code class="language-js">npm run generate</code></pre>
-                            <p>
-                              Now you can see the exported HTML content on a directory called <strong>dist/</strong> inside your project.
+                        <p>Run the following commands:</p>
+                        <pre class=" language-js"> <code class=" language-js">npm run generate</code>
+                        </pre>
+                        <p>
+                          Now you can see the exported HTML content on a directory called <strong>dist/</strong> inside your project.
 
-    That's a fully functioning static web app.
-                            </p>
-                          </li>
-                          <li>
-                            <p>You can deploy it to any static hosting service. But before we do that, we need to test it out locally.
+That's a fully functioning static web app. You can deploy it to any static hosting service, and it will work fine. But before we do that, we need to test it out locally.
 
-    In order to test the app, install the following <a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/serve">serve NPM module </a> globally:</p>
-                            <pre>
-    <code class="language-js">npm install -g serve</code>
-                            </pre>
-                          </li>
-                          <li>
-                            <p>After you've installed serve, run following commands from <code>/dist</code> directory</p>
-                            <pre>
-    <code class="language-js">serve -p 1234</code>
-                            </pre>
-                            <p>
-                              Now you can access your static app from http://localhost:1234.
-                            </p>
-                          </li>
-                        </ol>
+In order to test the app, install the following <a target="_blank" rel="noopener noreferrer" href="https://www.npmjs.com/package/serve">serve NPM module </a> globally:
+                        </p>
+                        <pre class=" language-js"><code class=" language-js">npm install <span class="token operator">-</span>g serve</code>
+                        </pre>
+                        <p>After you've installed serve, run following commands from <code>/dist</code> directory</p>
+                        <pre class=" language-js"><code class=" language-js">serve <span class="token operator">-</span>p <span class="token number">8080</span></code>
+                        </pre>
+                        <p>
+                          Now you can access your static app in http://localhost:8080. Everything should be working as usual.
+                        </p>
                     </div>
                 </section>
                 <!-- END -->
@@ -477,7 +436,7 @@
                 <section class="row" id="deploy">
                     <div class="col-lg-10">
                         <h1>Deployment</h1>
-                        <hr />
+                        <hr>
                         <h4>Deploy to server</h4>
                         <ul>
                           <li>First you have to clone/copy the project in your hosting/cloud server.</li>
@@ -492,64 +451,66 @@
                             <ul>
                               <li>
                                 Install the pm2 globally
-                                <pre><code class="language-js">npm install pm2@latest -g</code></pre>
+                                <pre class=" language-js"><code class=" language-js">npm install pm2@latest <span class="token operator">-</span>g</code></pre>
                               </li>
                               <li>
                                 Go to project folder i.e <code>packages/agency</code>
                               </li>
                               <li>
                                 Create ecosystem file
-                                <pre><code class="language-js">pm2 ecosystem</code></pre>
+                                <pre class=" language-js"><code class=" language-js">pm2 ecosystem</code></pre>
                                 It will generate <code>ecosystem.config.js</code> in your root project
                               </li>
                               <li>
                                 Open <code>ecosystem.config.js</code>.
                                 Then Change the script target to <code>./index.js</code> like this:
-                                <pre>
-                                  <code class="language-js">
-module.exports = {
-  apps : [{
-    name      : 'agency-vue',
-    script    : './node_modules/nuxt-start/bin/nuxt-start.js',
-    env: {
-      NODE_ENV: 'development'
-    },
-    env_production : {
-      NODE_ENV: 'production'
-    }
-  }],
+                                <pre class=" language-js">                                  <code class=" language-js">
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  apps <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    name      <span class="token punctuation">:</span> <span class="token string">'agency-vue'</span><span class="token punctuation">,</span>
+    port      <span class="token punctuation">:</span> <span class="token string">'3000'</span><span class="token punctuation">,</span>
+    exec_mode <span class="token punctuation">:</span> <span class="token string">'cluster'</span><span class="token punctuation">,</span>
+    instances <span class="token punctuation">:</span> <span class="token string">'max'</span><span class="token punctuation">,</span>
+    script    <span class="token punctuation">:</span> <span class="token string">'./.output/server/index.mjs'</span><span class="token punctuation">,</span>
+    env<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token constant">NODE_ENV</span><span class="token punctuation">:</span> <span class="token string">'development'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    env_production <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token constant">NODE_ENV</span><span class="token punctuation">:</span> <span class="token string">'production'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 
-  deploy : {
-    production : {
-      user : 'node',
-      host : '212.83.163.1',
-      ref  : 'origin/master',
-      repo : 'git@github.com:repo.git',
-      path : '/var/www/production',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
-    }
-  }
-};
+  deploy <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    production <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      user <span class="token punctuation">:</span> <span class="token string">'node'</span><span class="token punctuation">,</span>
+      host <span class="token punctuation">:</span> <span class="token string">'212.83.163.1'</span><span class="token punctuation">,</span>
+      ref  <span class="token punctuation">:</span> <span class="token string">'origin/master'</span><span class="token punctuation">,</span>
+      repo <span class="token punctuation">:</span> <span class="token string">'git@github.com:repo.git'</span><span class="token punctuation">,</span>
+      path <span class="token punctuation">:</span> <span class="token string">'/var/www/production'</span><span class="token punctuation">,</span>
+      <span class="token string">'post-deploy'</span> <span class="token punctuation">:</span> <span class="token string">'npm install &amp;&amp; pm2 reload ecosystem.config.js --env production'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
                                   </code>
                                 </pre>
                               </li>
                               <li>
                                 Run the project
-                                <pre><code class="language-js">pm2 start ecosystem.config.js --env production</code></pre>
+                                <pre class=" language-js"><code class=" language-js">pm2 start ecosystem<span class="token punctuation">.</span>config<span class="token punctuation">.</span>js <span class="token operator">--</span>env production</code></pre>
                               </li>
                               <li>Then navigate to <a href="http://localhost:3001" target="_blank">http://localhost:3001</a></li>
                             </ul>
                           </li>
                         </ul>
-                        <br />
-                        <hr />
-                        <br />
-                        <h4>Deploy to NOW</h4>
+                        <br>
+                        <hr>
+                        <br>
+                        <h4>Deploy to Vercel</h4>
                         <p>Deploy your website quickly, without having to manually configure DNS, SSL, CDN or hosting. Integrate with your favorite tools, and bring your entire team of developers and designers closer together.</p>
                         <ul>
                           <li>Go to your projects, then <code>npm run generate</code>. The static HTML will be generated in <code>dist/</code> folder</li>
-                          <li>Next just run <code>now --prod</code> to delploy.</li>
+                          <li>Next just run <code>vercel</code> to delploy.</li>
                           <li>Wait until process finish. Once finish you will get live url yo access it.</li>
                         </ul>
                     </div>
@@ -749,28 +710,27 @@ Module build <span class="token function">failed</span> <span class="token punct
                         <h1>Basic Code Structure</h1>
                         <hr />
                         <h4>Folder structure</h4>
-                        <pre>
-project-theme                                                                          
-|   ├── assets
-│   ├── components
-│   ├── config
-│   ├── layouts
-│   ├── middleware
-│   ├── pages
-│   ├── plugin
-│   ├── server                                                                             
-│   ├───static                                                                              
-│   │   ├───favicons                                                                        
-│   │   ├───images                                                                          
-│   │   ├───locales                                                                       
-│   │   └───text                                                                            
-│   ├── store
-│   ├── app.html
-│   ├── nuxt.config.js
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── README.md
-│   ├── youtube.js                                                                           
+                        <pre>└── packages
+    ├── [theme-name]
+    |   ├── .eslintrc.js
+    |   ├── .gitignore
+    |   ├── .npmrc
+    |   ├── assets
+    │&nbsp;&nbsp; ├── components
+    │&nbsp;&nbsp; ├── composable
+    │&nbsp;&nbsp; ├── config
+    │&nbsp;&nbsp; ├── error.vue
+    │&nbsp;&nbsp; ├── lang
+    │&nbsp;&nbsp; ├── layouts
+    │&nbsp;&nbsp; ├── nuxt.config.ts
+    │&nbsp;&nbsp; ├── package.json
+    │&nbsp;&nbsp; ├── package-lock.json
+    │&nbsp;&nbsp; ├── pages
+    │&nbsp;&nbsp; ├── plugin
+    │&nbsp;&nbsp; ├── preview.jpg
+    │&nbsp;&nbsp; ├── public
+    │&nbsp;&nbsp; ├── README.md
+    │&nbsp;&nbsp; ├── tsconfig.json                                                                        
                         </pre>
                         <h4>Code preview</h4>
                         <br />
@@ -813,33 +773,33 @@ project-theme
                           <tbody>
                             <tr>
                               <td>UI Components</td>
-                              <td><strong>~/components</strong></td>
+                              <td><strong>@/components</strong></td>
                               <td>/components</td>
-                              <td><code>import Header from '~/components/Header'</code></td>
+                              <td><code>import Header from '@/components/Header'</code></td>
                             </tr>
                             <tr>
                               <td>Images</td>
-                              <td><strong>~/static/images</strong></td>
-                              <td>static/images</td>
-                              <td><code>import imgAPI from '~/static/images/imgAPI'</code></td>
+                              <td><strong>@/assets/images</strong></td>
+                              <td>assets/images</td>
+                              <td><code>import imgAPI from '@/assets/images/imgAPI'</code></td>
                             </tr>
                             <tr>
                               <td>Dummy text and link</td>
-                              <td><strong>~/static/text</strong></td>
-                              <td>static/text</td>
-                              <td><code>import brand from '~/static/text/brand'</code></td>
+                              <td><strong>@/assets/text</strong></td>
+                              <td>assets/text</td>
+                              <td><code>import brand from '@/static/text/brand'</code></td>
                             </tr>
                             <tr>
                               <td>Component Style Overider</td>
-                              <td><strong>~/assets/vendors</strong></td>
-                              <td>/assets/vendors</td>
-                              <td><code>import '~/assets/vendors/animate.css'</code></td>
+                              <td><strong>@/assets/scss/vendors</strong></td>
+                              <td>/assets/scss/vendors</td>
+                              <td><code>import '@/assets/scss/vendors/animate.css'</code></td>
                             </tr>
                             <tr>
                               <td>And any your files</td>
-                              <td><strong>~/yourfolder</strong></td>
+                              <td><strong>@/yourfolder</strong></td>
                               <td>/yourfolder</td>
-                              <td><code>import '~/yourfolder/file';</code></td>
+                              <td><code>import '@/yourfolder/file';</code></td>
                             </tr>
                           </tbody>
                         </table>
@@ -960,37 +920,38 @@ project-theme
                 <section class="row" id="create_page">
                     <div class="col-lg-12">
                         <h1>Create New Page</h1>
-                        <hr />
+                        <hr>
                         <ul>
                             <li>In example we want to create an "About" page by adding the following content to <code>pages/about.vue</code></li>
                             <li>
-                              <pre><code class="language-js">
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;h2&gt;This is the about page&lt;/h2&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+                              <pre class=" language-js"><code class=" language-js">
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>This is the about page<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
 
-&lt;script&gt;
-import brand from '~/static/text/brand'
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineNuxtComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'#app'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> brand <span class="token keyword">from</span> <span class="token string">'@/assets/text/brand'</span>
 
-export default {
-  head() {
-    return {
-      title: brand.starter.name + ' - About Page'
-    }
-  }
-}
-&lt;/script&gt;
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineNuxtComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">head</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> brand<span class="token punctuation">.</span>starter<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">' - About Page'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 
                               </code></pre>
                             </li>
                             <li>Then we can access that page with http://localhost:8000/about</li>
                         </ul>
-                        <br />
-                        <br />
+                        <br>
+                        <br>
                     </div>
-                  <br /><br />
+                  <br><br>
               </section>
                 <!-- END -->
               
@@ -998,76 +959,77 @@ export default {
                 <section class="row" id="create_component">
                     <div class="col-lg-12">
                         <h1>Create New Component</h1>
-                        <hr />
+                        <hr>
                         <ul>
                           <li>Go to <code>/components/</code></li>
                           <li>Create new folder ex: <b>MyComponent</b>. <em>The name must in capitalize</em></li>
                           <li>Create new vue file inside that folder with <b>same name as folder MyComponent</b>, that is <code>MyComponent.vue</code>. <em>The name must in capitalize</em></li>
                           <li>
                             Create new js file inside that folder <code>index.js</code>. Then export the vue componet.
-                            <pre><code class="language-js">export { default } from './MyComponent'</code></pre>
+                            <pre class=" language-js"><code class=" language-js"><span class="token keyword">export</span> <span class="token punctuation">{</span> <span class="token keyword">default</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./MyComponent'</span></code></pre>
                           </li>
                           <li>
-                              Inside the file create a simple Vue template ex: <br />
-                              <pre><code class="language-js">// file: /components/MyComponent/MyComponent.vue
+                              Inside the file create a simple Vue template ex: <br>
+                              <pre class=" language-js"><code class=" language-js"><span class="token comment">// file: /components/MyComponent/MyComponent.vue</span>
 
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;h1&gt;Hello World&lt;/h1&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>h1<span class="token operator">&gt;</span>Hello World<span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
 
 </code></pre>
                             </li>
                             <li>Open a <b>target page</b> where you want use it. Ex: Open <code>/pages/about.vue</code>. <em>(Example page that we've made in previous section)</em></li>
                             <li>
-                              Import component form component folder<br />
-                              <pre><code class="language-js">import MyComponent from '../components/MyComponent'</code></pre>
+                              Import component form component folder<br>
+                              <pre class=" language-js"><code class=" language-js"><span class="token keyword">import</span> MyComponent <span class="token keyword">from</span> <span class="token string">'@/components/MyComponent'</span></code></pre>
                             </li>
                             <li>
                               Then register it in components script
-export default {                      <pre><code class="language-js">
-  components: {
+export default {                      <pre class=" language-js"><code class=" language-js">
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     MyComponent
-  }
-}
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
                               </code></pre>
                             </li>
                             <li>
-                              Then use it inside template<br />
-                              <pre><code class="language-js">&lt;template&gt;
-  &lt;div&gt;
-    &lt;h2&gt;This is the about page&lt;/h2&gt;
-    &lt;my-component /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+                              Then use it inside template<br>
+                              <pre class=" language-js"><code class=" language-js"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>This is the about page<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>my<span class="token operator">-</span>component <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
                             </code></pre>
                                 </li>
                                 <li>
-                                  Here's complete code <br />
-                                  <pre><code class="language-js">// file: /page/about.vue
-&lt;template&gt;
-  &lt;div&gt;
-    &lt;h2&gt;This is the about page&lt;/h2&gt;
-    &lt;my-component /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+                                  Here's complete code <br>
+                                  <pre class=" language-js"><code class=" language-js"><span class="token comment">// file: /page/about.vue</span>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>This is the about page<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>my<span class="token operator">-</span>component <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
 
-&lt;script&gt;
-import brand from '~/static/text/brand'
-import MyComponent from '../components/MyComponent
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">import</span> brand <span class="token keyword">from</span> <span class="token string">'@/assets/text/brand'</span>
+<span class="token keyword">import</span> MyComponent <span class="token keyword">from</span> '@<span class="token operator">/</span>components<span class="token operator">/</span>MyComponent
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineNuxtComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'#app'</span><span class="token punctuation">;</span>
 
-export default {
-  components: {
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineNuxtComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     MyComponent
-  },
-  head() {
-    return {
-      title: brand.starter.name + ' - About Page'
-    }
-  }
-}
-&lt;/script&gt;
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">head</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      title<span class="token punctuation">:</span> brand<span class="token punctuation">.</span>starter<span class="token punctuation">.</span>name <span class="token operator">+</span> <span class="token string">' - About Page'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
 </code></pre>
                                 </li>
                                 <li>Then you can check the result at <a href="http://localhost:8000/about">http://localhost:8000/about</a></li>
@@ -1085,59 +1047,27 @@ export default {
                         <strong><em>NOTE: By enable eslint the running app process at beginning will slower.</em></strong><br><br>
                         Just follow this step to enable eslint<br>
                         <ul>
-                          <li>Go to <code>/nuxt.config.js</code></li>
+                          <li>Go to <code>/nuxt.config.ts</code></li>
                           <li>
                             Just uncomment this code bellow
-                            <pre class=" language-js"><code class=" language-js">module.exports = {
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-      // if (ctx.isDev && ctx.isClient) {
-        // config.module.rules.push({
-          // enforce: "pre",
-          // test: /\.(js|vue)$/,
-          // loader: "eslint-loader",
-          // exclude: /([node_modules, static])/,
-          // options: {
-          //   fix: false
-          // }
-        // });
-      // }
-    }
-  }
-}
+                            <pre class="  language-js"><code class="  language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineNuxtConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  vite<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token comment">// eslintPlugin(),</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
                           </li>
                           <li>
                             Then should become like this
-                            <pre class=" language-js"><code class=" language-js">module.exports = {
-  /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /([node_modules, static])/,
-          options: {
-            fix: false
-          }
-        });
-      }
-    }
-  }
-}
+                            <pre class="  language-js"><code class="  language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineNuxtConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  vite<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token function">eslintPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
                           </li>
                           <li>
@@ -1394,6 +1324,28 @@ head: {
                 <section class="row" id="log">
                     <div class="col-lg-10">
                         <h1>Change Log</h1>
+                        <table class="table table-striped log">
+                            <thead>
+                              <tr>
+                                <th>
+                                    <strong>Version 2.0.0 – 27 Aug, 2023</strong>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td>
+                                      Upgrade to Vue 3
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                      File Changes: <br />
+                                      packages/[theme-name]/
+                                  </td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <table class="table table-striped log">
                             <thead>
                               <tr>
